@@ -30,3 +30,9 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 </rdf:RDF>
 ```
 
+* __taxonID__ : identifiants de taxon info fauna (NUESP dans nos bases de données). Ce numéro est unique dans nos systèmes. Il ne l’est pas globalement.
+* __family__ : famille taxonomique.
+* __genus__ : genre taxonomique.
+* __specificEpithet__ : espèce taxonomique.
+* __taxonRank__ : rang du taxon (famille, genre, espèce, etc.)
+* __vernacularName__ : nom vernaculaire. La langue est donnée comme information complémentaire.
