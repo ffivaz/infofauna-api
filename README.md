@@ -36,4 +36,4 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 * __genus__ : genre taxonomique.
 * __specificEpithet__ : espèce taxonomique.
 * __taxonRank__ : rang du taxon (famille, genre, espèce, etc.)
-* __vernacularName__ : nom vernaculaire. La langue est donnée comme information complémentaire.
+* __vernacularName__ : noms vernaculaires. A notre connaissance, le format ne permet pas de spécifier la langue.
