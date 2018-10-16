@@ -16,7 +16,8 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dcterms="http://purl.org/dc/terms/">
-    <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">      <dwc:taxonID>70110</dwc:taxonID>
+    <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
+      <dwc:taxonID>70110</dwc:taxonID>
       <dwc:family>Alytidae</dwc:family>
       <dwc:genus>Alytes</dwc:genus>
       <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
