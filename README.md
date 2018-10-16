@@ -23,10 +23,10 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
       <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
       <dwc:scientificName>Alytes obstetricans (Laurenti, 1768)</dwc:scientificName>
       <dwc:taxonRank>species</dwc:taxonRank>
-      <dwc:vernacularName dcterms:language="fr">Crapaud accoucheur</dwc:vernacularName>
-      <dwc:vernacularName dcterms:language="de">Geburtshelferkröte</dwc:vernacularName>
-      <dwc:vernacularName dcterms:language="it">Rospo ostetrico</dwc:vernacularName>
-      <dwc:vernacularName dcterms:language="en">Midwife Toad</dwc:vernacularName>
+      <dwc:vernacularName>Crapaud accoucheur</dwc:vernacularName>
+      <dwc:vernacularName>Geburtshelferkröte</dwc:vernacularName>
+      <dwc:vernacularName>Rospo ostetrico</dwc:vernacularName>
+      <dwc:vernacularName>Midwife Toad</dwc:vernacularName>
     </dwc:Taxon>
 </rdf:RDF>
 ```
