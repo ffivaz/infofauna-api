@@ -39,7 +39,7 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 * __vernacularName__ : noms vernaculaires. A notre connaissance, le format ne permet pas de spécifier la langue.
 
 ### Distribution selon la grille 5x5 km
-La distrbution des espèces est données selon une grille de 5x5 km. La description de chaque localité est conforme aux standards de Darwin Core (https://dwc.tdwg.org/terms/#Location). Pour le crapaud accoucheur, les données, pour le centre de la Ville de Berne sont disponibles à l'adresse: https://lepus.unine.ch/api/distribution/70110/grid/600200.
+La distrbution des espèces est données selon une grille de 5x5 km. La description de chaque localité est conforme aux standards de Darwin Core (https://dwc.tdwg.org/terms/#location). Pour le crapaud accoucheur, les données, pour le centre de la Ville de Berne sont disponibles à l'adresse: https://lepus.unine.ch/api/distribution/70110/grid/600200.
 
 
 ```rdf
