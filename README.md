@@ -6,7 +6,7 @@ L'adresse pour l'accès aux données est https://lepus.unine.ch/api.
 ## Formats
 Les données sont actuellement disponibles au format [rdf](https://www.w3.org/RDF/). Le format [json](https://www.json.org/) pourrait également être mis à disposition dans le futur. Les données qui concernent la distribution seront également mises à disposition sous forme cartographique via notre serveur [WM(T)S](https://fr.wikipedia.org/wiki/Web_Map_Tile_Service).
 
-Info fauna ne met pas à disposition un Endpoint pour effectuer des requêtes [SPARQL](https://www.w3.org/TR/rdf-sparql-query/).
+Info fauna ne met pas à disposition un _endpoint_ pour effectuer des requêtes [SPARQL](https://www.w3.org/TR/rdf-sparql-query/).
 
 ## Déontologie et accès aux données
 Les données mises à disposition peuvent être utilisées sans restriction. Info fauna ne met toutefois pas à disposition les données brutes issues des bases de données, mais des données agrégées conformément à la [déontologie](http://www.cscf.ch/cscf/home/datenverwaltung/datenschutzrichtlinien.html) adoptée par les [centres nationaux de données](https://www.infospecies.ch/fr/).
