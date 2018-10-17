@@ -37,3 +37,30 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 * __specificEpithet__ : espèce taxonomique.
 * __taxonRank__ : rang du taxon (famille, genre, espèce, etc.)
 * __vernacularName__ : noms vernaculaires. A notre connaissance, le format ne permet pas de spécifier la langue.
+
+### Distribution selon la grille 5x5 km
+La distrbution des espèces est données selon une grille de 5x5 km. La description de chaque localité est conforme aux standards de Darwin Core (https://dwc.tdwg.org/terms/#Location). Pour le crapaud accoucheur, les données, pour le centre de la Ville de Berne sont disponibles à l'adresse: https://lepus.unine.ch/api/distribution/70110/grid/600200.
+
+
+```rdf
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+  <rdf:Description rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
+    <dc:language>fr</dc:language>
+  </rdf:Description>
+  <dwc:Taxon rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
+    <dwc:taxonID>70110</dwc:taxonID>
+    <dwc:family>Alytidae</dwc:family>
+    <dwc:genus>Alytes</dwc:genus>
+    <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
+    <dwc:scientificName>Alytes obstetricans  (Laurenti, 1768)</dwc:scientificName>
+    <dwc:taxonRank>species</dwc:taxonRank>
+  </dwc:Taxon>
+  <dc:Location rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
+    <dwc:countryCode>CH</dwc:countryCode>
+    <dwc:decimalLatitude>202500</dwc:decimalLatitude>
+    <dwc:decimalLongitude>602500</dwc:decimalLongitude>
+    <dwc:geodeticDatum>EPSG:21781</dwc:geodeticDatum>
+  </dc:Location>
+</rdf:RDF>
+```
