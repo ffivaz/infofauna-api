@@ -61,3 +61,9 @@ La distrbution des espèces est données selon une grille de 5x5 km. La descript
   </rdf:Description>
 </rdf:RDF>
 ```
+
+* __taxonID__ : lien vers l'identification de taxon décrite plus haut.
+* __countraCode__ : code pays (ici généralement CH).
+* __decimalLatitude__ : coordonnées Y du centre du carré 5x5km.
+* __decimalLongitude__ : coordonnées X du centre du carré 5x5km.
+* __geodeticDatum__ : Code [EPSG](http://spatialreference.org/ref/epsg/) des coordonnées (projection utlisée), le 21781 correspond à la projection suisse CH1903 / LV03.
