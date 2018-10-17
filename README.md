@@ -15,7 +15,7 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dcterms="http://purl.org/dc/terms/">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
     <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
       <dwc:taxonID>70110</dwc:taxonID>
       <dwc:family>Alytidae</dwc:family>
@@ -23,10 +23,10 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
       <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
       <dwc:scientificName>Alytes obstetricans (Laurenti, 1768)</dwc:scientificName>
       <dwc:taxonRank>species</dwc:taxonRank>
-      <dwc:vernacularName>Crapaud accoucheur</dwc:vernacularName>
-      <dwc:vernacularName>Geburtshelferkröte</dwc:vernacularName>
-      <dwc:vernacularName>Rospo ostetrico</dwc:vernacularName>
-      <dwc:vernacularName>Midwife Toad</dwc:vernacularName>
+      <dwc:vernacularName xml:lang="fr">Crapaud accoucheur</dwc:vernacularName>
+      <dwc:vernacularName xml:lang="de">Geburtshelferkröte</dwc:vernacularName>
+      <dwc:vernacularName xml:lang="it">Rospo ostetrico</dwc:vernacularName>
+      <dwc:vernacularName xml:lang="en">Midwife Toad</dwc:vernacularName>
     </dwc:Taxon>
 </rdf:RDF>
 ```
