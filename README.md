@@ -16,18 +16,19 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
-    <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
-      <dwc:taxonID>70110</dwc:taxonID>
-      <dwc:family>Alytidae</dwc:family>
-      <dwc:genus>Alytes</dwc:genus>
-      <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
-      <dwc:scientificName>Alytes obstetricans (Laurenti, 1768)</dwc:scientificName>
-      <dwc:taxonRank>species</dwc:taxonRank>
-      <dwc:vernacularName xml:lang="fr">Crapaud accoucheur</dwc:vernacularName>
-      <dwc:vernacularName xml:lang="de">Geburtshelferkröte</dwc:vernacularName>
-      <dwc:vernacularName xml:lang="it">Rospo ostetrico</dwc:vernacularName>
-      <dwc:vernacularName xml:lang="en">Midwife Toad</dwc:vernacularName>
-    </dwc:Taxon>
+  <rdf:Description rdf:about="https://lepus.unine.ch/api/species/70110">
+    <rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+    <dwc:taxonID>70110</dwc:taxonID>
+    <dwc:family>Alytidae</dwc:family>
+    <dwc:genus>Alytes</dwc:genus>
+    <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
+    <dwc:scientificName>Alytes obstetricans (Laurenti, 1768)</dwc:scientificName>
+    <dwc:taxonRank>species</dwc:taxonRank>
+    <dwc:vernacularName xml:lang="fr">Crapaud accoucheur</dwc:vernacularName>
+    <dwc:vernacularName xml:lang="de">Geburtshelferkröte</dwc:vernacularName>
+    <dwc:vernacularName xml:lang="it">Rospo ostetrico</dwc:vernacularName>
+    <dwc:vernacularName xml:lang="en">Midwife Toad</dwc:vernacularName>
+  </rdf:Description>
 </rdf:RDF>
 ```
 
@@ -44,23 +45,14 @@ La distrbution des espèces est données selon une grille de 5x5 km. La descript
 
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwciri="http://rs.tdwg.org/dwc/iri/">
   <rdf:Description rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
     <dc:language>fr</dc:language>
+      <dwc:taxonID>https://lepus.unine.ch/api/species/70110</dwc:taxonID>
+      <dwc:countryCode>CH</dwc:countryCode>
+      <dwc:decimalLatitude>202500</dwc:decimalLatitude>
+      <dwc:decimalLongitude>602500</dwc:decimalLongitude>
+      <dwc:geodeticDatum>EPSG:21781</dwc:geodeticDatum>
   </rdf:Description>
-  <dwc:Taxon rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
-    <dwc:taxonID>70110</dwc:taxonID>
-    <dwc:family>Alytidae</dwc:family>
-    <dwc:genus>Alytes</dwc:genus>
-    <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
-    <dwc:scientificName>Alytes obstetricans  (Laurenti, 1768)</dwc:scientificName>
-    <dwc:taxonRank>species</dwc:taxonRank>
-  </dwc:Taxon>
-  <dc:Location rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
-    <dwc:countryCode>CH</dwc:countryCode>
-    <dwc:decimalLatitude>202500</dwc:decimalLatitude>
-    <dwc:decimalLongitude>602500</dwc:decimalLongitude>
-    <dwc:geodeticDatum>EPSG:21781</dwc:geodeticDatum>
-  </dc:Location>
 </rdf:RDF>
 ```
