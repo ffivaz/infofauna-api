@@ -55,6 +55,8 @@ WHERE
     ?x dwc:specificEpithet ?species }
 ```
 
+Le résultat de la requête peut être [consulté ici](https://lepus.unine.ch/api/sparql.php?query=PREFIX+dwc%3A+%3Chttp%3A%2F%2Frs.tdwg.org%2Fdwc%2Fterms%2F%3E%0D%0ASELECT+%3Fnuesp+%3Ffamily+%3Fgenus+%3Fspecies%0D%0AWHERE%0D%0A++%7B+%3Fx+dwc%3AtaxonID+%3Fnuesp+.%0D%0A++++%3Fx+dwc%3Afamily+%3Ffamily+.%0D%0A++++%3Fx+dwc%3Agenus+%3Fgenus+.%0D%0A++++%3Fx+dwc%3AspecificEpithet+%3Fspecies+%7D&output=htmltab&jsonp=&key=&show_inline=1). 
+
 ### Distribution selon la grille 5x5 km
 La distrbution des espèces est données selon une grille de 5x5 km. La description de chaque localité est conforme aux standards de Darwin Core (https://dwc.tdwg.org/terms/#location). Pour le crapaud accoucheur, les données, pour le centre de la Ville de Berne sont disponibles à l'adresse: https://lepus.unine.ch/api/distribution/70110/grid/600200.
 
