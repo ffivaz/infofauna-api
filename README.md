@@ -63,15 +63,16 @@ La distrbution des espèces est données selon une grille de 5x5 km. La descript
 
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dwciri="http://rs.tdwg.org/dwc/iri/">
-  <rdf:Description rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
-    <dc:language>fr</dc:language>
-      <dwc:taxonID>https://lepus.unine.ch/api/species/70110</dwc:taxonID>
-      <dwc:countryCode>CH</dwc:countryCode>
-      <dwc:decimalLatitude>202500</dwc:decimalLatitude>
-      <dwc:decimalLongitude>602500</dwc:decimalLongitude>
-      <dwc:geodeticDatum>EPSG:21781</dwc:geodeticDatum>
-  </rdf:Description>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
+  <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
+    <dwc:taxonID>70110</dwc:taxonID>
+  </dwc:Taxon>
+  <dc:Location rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
+    <dwc:countryCode>CH</dwc:countryCode>
+    <dwc:decimalLatitude>202500</dwc:decimalLatitude>
+    <dwc:decimalLongitude>602500</dwc:decimalLongitude>
+    <dwc:geodeticDatum>EPSG:21781</dwc:geodeticDatum>
+  </dc:Location>
 </rdf:RDF>
 ```
 
