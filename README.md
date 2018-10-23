@@ -6,7 +6,7 @@ L'adresse pour l'accès aux données est https://lepus.unine.ch/api.
 ## Formats
 Les données sont actuellement disponibles au format [rdf](https://www.w3.org/RDF/). Le format [json](https://www.json.org/) pourrait également être mis à disposition dans le futur. Les données qui concernent la distribution seront également mises à disposition sous forme cartographique via notre serveur [WM(T)S](https://fr.wikipedia.org/wiki/Web_Map_Tile_Service).
 
-Info fauna ne met pas à disposition un _endpoint_ pour effectuer des requêtes [SPARQL](https://www.w3.org/TR/rdf-sparql-query/).
+Info fauna met à disposition un _endpoint_ pour effectuer des requêtes [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) à l'adresse https://lepus.unine.ch/api/sparql.php. A l'heure actuelle, le nombre de données accessibles via ce point d'accès est très limité.
 
 ## Déontologie et accès aux données
 Les données mises à disposition peuvent être utilisées sans restriction. Info fauna ne met toutefois pas à disposition les données brutes issues des bases de données, mais des données agrégées conformément à la [déontologie](http://www.cscf.ch/cscf/home/datenverwaltung/datenschutzrichtlinien.html) adoptée par les [centres nationaux de données](https://www.infospecies.ch/fr/).
@@ -21,8 +21,7 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
-  <rdf:Description rdf:about="https://lepus.unine.ch/api/species/70110">
-    <rdf:type rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+  <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
     <dwc:taxonID>70110</dwc:taxonID>
     <dwc:family>Alytidae</dwc:family>
     <dwc:genus>Alytes</dwc:genus>
@@ -33,7 +32,7 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
     <dwc:vernacularName xml:lang="de">Geburtshelferkröte</dwc:vernacularName>
     <dwc:vernacularName xml:lang="it">Rospo ostetrico</dwc:vernacularName>
     <dwc:vernacularName xml:lang="en">Midwife Toad</dwc:vernacularName>
-  </rdf:Description>
+  </dwc:Taxon>
 </rdf:RDF>
 ```
 
@@ -43,6 +42,8 @@ Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.td
 * __specificEpithet__ : espèce taxonomique.
 * __taxonRank__ : rang du taxon (famille, genre, espèce, etc.)
 * __vernacularName__ : noms vernaculaires. A notre connaissance, le format ne permet pas de spécifier la langue.
+
+
 
 ### Distribution selon la grille 5x5 km
 La distrbution des espèces est données selon une grille de 5x5 km. La description de chaque localité est conforme aux standards de Darwin Core (https://dwc.tdwg.org/terms/#location). Pour le crapaud accoucheur, les données, pour le centre de la Ville de Berne sont disponibles à l'adresse: https://lepus.unine.ch/api/distribution/70110/grid/600200.
