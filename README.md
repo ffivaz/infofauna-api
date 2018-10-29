@@ -66,16 +66,29 @@ Les specimens sont décrites conformément aux éléments de [Dublin Core](http:
 * __decimalLongitude__ : longitude (du centre du carré 5x5km).
 * __geodeticDatum__ : Projection utilisée, ici WGS84
 
-Une requête SPARQL sur la base de ces données peut par exemple prendre la forme suivante :
+Une requête SPARQL permettant d'extraire la liste des espèces prend par exemple la forme suivante :
 
 ```sparql
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
-SELECT ?nuesp ?family ?genus ?species
+SELECT DISTINCT ?family ?genus ?species
 WHERE
-  { ?x dwc:taxonID ?nuesp .
-    ?x dwc:family ?family .
+  { ?x dwc:family ?family .
     ?x dwc:genus ?genus .
     ?x dwc:specificEpithet ?species }
-```
+ ```
 
-Le résultat de la requête peut être [consulté ici](https://lepus.unine.ch/api/sparql.php?query=PREFIX+dwc%3A+%3Chttp%3A%2F%2Frs.tdwg.org%2Fdwc%2Fterms%2F%3E%0D%0ASELECT+%3Fnuesp+%3Ffamily+%3Fgenus+%3Fspecies%0D%0AWHERE%0D%0A++%7B+%3Fx+dwc%3AtaxonID+%3Fnuesp+.%0D%0A++++%3Fx+dwc%3Afamily+%3Ffamily+.%0D%0A++++%3Fx+dwc%3Agenus+%3Fgenus+.%0D%0A++++%3Fx+dwc%3AspecificEpithet+%3Fspecies+%7D&output=htmltab&jsonp=&key=&show_inline=1). 
+Le résultat de la requête peut être [consulté ici](https://lepus.unine.ch/api/sparql.php?query=PREFIX+dwc%3A+%3Chttp%3A%2F%2Frs.tdwg.org%2Fdwc%2Fterms%2F%3E%0D%0ASELECT+DISTINCT+%3Ffamily+%3Fgenus+%3Fspecies%0D%0AWHERE%0D%0A++%7B+%3Fx+dwc%3Afamily+%3Ffamily+.%0D%0A++++%3Fx+dwc%3Agenus+%3Fgenus+.%0D%0A++++%3Fx+dwc%3AspecificEpithet+%3Fspecies+%7D&output=htmltab&jsonp=&key=2d4d2f1d50ad9429e48f51ab3338e14a&show_inline=1).
+
+Une requête SPARQL permettant d'extraire la liste des coordonnées (les carrés 5x5km) dans lesquelles on trouve Rana temporaria prend par exemple la forme suivante :
+
+```sparql
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+SELECT DISTINCT ?latitude ?longitude
+WHERE
+  { ?x dwc:decimalLatitude ?latitude .
+    ?x dwc:decimalLongitude ?longitude .
+    ?x dwc:genus "Rana" .    
+    ?x dwc:specificEpithet "temporaria" }
+ ```
+
+Le résultat de la requête peut être [consulté ici](https://lepus.unine.ch/api/sparql.php?query=PREFIX+dwc%3A+%3Chttp%3A%2F%2Frs.tdwg.org%2Fdwc%2Fterms%2F%3E%0D%0ASELECT+DISTINCT+%3Flatitude+%3Flongitude%0D%0AWHERE%0D%0A++%7B+%3Fx+dwc%3AdecimalLatitude+%3Flatitude+.%0D%0A++++%3Fx+dwc%3AdecimalLongitude+%3Flongitude+.%0D%0A++++%3Fx+dwc%3Agenus+%22Rana%22+.++++%0D%0A++++%3Fx+dwc%3AspecificEpithet+%22temporaria%22+%7D&output=htmltab&jsonp=&key=2d4d2f1d50ad9429e48f51ab3338e14a&show_inline=1).
