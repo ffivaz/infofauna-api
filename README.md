@@ -23,12 +23,13 @@ Les specimens sont décrites conformément aux éléments de [Dublin Core](http:
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dc="http://purl.org/dc/terms/">
 <rdf:Description rdf:about="https://lepus.unine.ch/api/specimen/114">
   <dc:creator>info fauna, Neuchâtel, Switzerland</dc:creator>
-  <dc:created>2018-10-29T15:12:22+01:00</dc:created>
+  <dc:created>2018-10-29T15:22:37+01:00</dc:created>
 </rdf:Description>
 <rdf:Description rdf:about="https://lepus.unine.ch/api/specimen/114">
   <dc:type>Specimen</dc:type>
   <dwc:basisOfRecord>Occurrence</dwc:basisOfRecord>
-  <dwc:recordedBy>Inventar SO Finder S</dwc:recordedBy>  <dwc:taxonID>https://lepus.unine.ch/api/specimen/114</dwc:taxonID>
+  <dwc:recordedBy>Inventar SO Finder S</dwc:recordedBy>
+  <dwc:taxonID>70127</dwc:taxonID>
   <dwc:family>Ranidae</dwc:family>
   <dwc:genus>Rana</dwc:genus>
   <dwc:specificEpithet>temporaria</dwc:specificEpithet>
@@ -48,19 +49,22 @@ Les specimens sont décrites conformément aux éléments de [Dublin Core](http:
 </rdf:Description>
 </rdf:RDF>
 ```
-* __type__ : type de données, selon Dublin Core, ici généralement un specimen
-*
+* __type__ : type de données, selon Dublin Core, généralement un specimen.
+* __basisOfRecord__ : la nature de l'information. Ici, une occurrence, l'existence d'un origanisme à un moment et dans un lieu donné.
 * __taxonID__ : identifiants de taxon info fauna (NUESP dans nos bases de données). Ce numéro est unique dans nos systèmes. Il ne l’est pas globalement.
+* __recordedBy__ : personne ayant récolté la donnée.
 * __family__ : famille taxonomique.
 * __genus__ : genre taxonomique.
 * __specificEpithet__ : espèce taxonomique.
 * __taxonRank__ : rang du taxon (famille, genre, espèce, etc.)
-* __vernacularName__ : noms vernaculaires. A notre connaissance, le format ne permet pas de spécifier la langue.
-* __taxonID__ : lien vers l'identification de taxon décrite plus haut.
-* __countraCode__ : code pays (ici généralement CH).
-* __decimalLatitude__ : coordonnées Y du centre du carré 5x5km.
-* __decimalLongitude__ : coordonnées X du centre du carré 5x5km.
-* __geodeticDatum__ : Code [EPSG](http://spatialreference.org/ref/epsg/) des coordonnées (projection utlisée), le 21781 correspond à la projection suisse CH1903 / LV03.
+* __vernacularName__ : noms vernaculaires, peuvent-être multiples, la langue est donnée par le préfixe xml_lang.
+* __country__ : pays.
+* __countryCode__ : code pays (ici généralement CH).
+* __stateProvince__ : code province, le canton en Suisse.
+* __municipality__ : le nom de la commune dans laquelle l'observation a été trouvée.
+* __decimalLatitude__ : latitude (du centre du carré 5x5km).
+* __decimalLongitude__ : longitude (du centre du carré 5x5km).
+* __geodeticDatum__ : Projection utilisée, ici WGS84
 
 Une requête SPARQL sur la base de ces données peut par exemple prendre la forme suivante :
 
