@@ -15,33 +15,52 @@ Les données mises à disposition peuvent être utilisées sans restriction. Inf
 Les propositions du [Darwin Core](http://rs.tdwg.org/dwc/) concernant la présentation standardisée de données liées à la biodiversité seront utilisées pour décrire les données distribuées par info fauna sous forme RDF. Darwin Core est un _vocabulaire_ pour la description de ressources dans le domaine de la biodiversité.
 
 ## Données disponibles
-### Espèces
-Les espèces sont décrites conformément aux taxons Darwin Core (https://dwc.tdwg.org/terms/#taxon). [Alytes obstetricans](https://lepus.unine.ch/carto/index.php?nuesp=70110&rivieres=on&lacs=on&hillsh=on&data=on&year=2000), le crapaud accoucheur, est comme décrit plus bas dans notre sortie rdf. Les données sont disponibles à l’adresse : https://lepus.unine.ch/api/species/70110.
+### Specimens
+Les specimens sont décrites conformément aux éléments de [Dublin Core](http://dublincore.org/) et de [Darwin Core](https://dwc.tdwg.org/terms/#taxon). La donnée https://lepus.unine.ch/api/specimen/1 est ainsi décrite par les informations contenues dans la sortie ci-dessous.
 
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
-  <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
-    <dwc:taxonID>70110</dwc:taxonID>
-    <dwc:family>Alytidae</dwc:family>
-    <dwc:genus>Alytes</dwc:genus>
-    <dwc:specificEpithet>obstetricans</dwc:specificEpithet>
-    <dwc:scientificName>Alytes obstetricans (Laurenti, 1768)</dwc:scientificName>
-    <dwc:taxonRank>species</dwc:taxonRank>
-    <dwc:vernacularName xml:lang="fr">Crapaud accoucheur</dwc:vernacularName>
-    <dwc:vernacularName xml:lang="de">Geburtshelferkröte</dwc:vernacularName>
-    <dwc:vernacularName xml:lang="it">Rospo ostetrico</dwc:vernacularName>
-    <dwc:vernacularName xml:lang="en">Midwife Toad</dwc:vernacularName>
-  </dwc:Taxon>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dc="http://purl.org/dc/terms/">
+<rdf:Description rdf:about="https://lepus.unine.ch/api/specimen/114">
+  <dc:creator>info fauna, Neuchâtel, Switzerland</dc:creator>
+  <dc:created>2018-10-29T15:12:22+01:00</dc:created>
+</rdf:Description>
+<rdf:Description rdf:about="https://lepus.unine.ch/api/specimen/114">
+  <dc:type>Specimen</dc:type>
+  <dwc:basisOfRecord>Occurrence</dwc:basisOfRecord>
+  <dwc:recordedBy>Inventar SO Finder S</dwc:recordedBy>  <dwc:taxonID>https://lepus.unine.ch/api/specimen/114</dwc:taxonID>
+  <dwc:family>Ranidae</dwc:family>
+  <dwc:genus>Rana</dwc:genus>
+  <dwc:specificEpithet>temporaria</dwc:specificEpithet>
+  <dwc:scientificName>Rana temporaria Linnaeus, 1758</dwc:scientificName>
+  <dwc:taxonRank>species</dwc:taxonRank>
+  <dwc:vernacularName xml:lang="fr">Grenouille rousse</dwc:vernacularName>
+  <dwc:vernacularName xml:lang="de">Grasfrosch</dwc:vernacularName>
+  <dwc:vernacularName xml:lang="it">Rana temporaria</dwc:vernacularName>
+  <dwc:vernacularName xml:lang="en">Grass Frog</dwc:vernacularName>
+  <dwc:country>Switzerland</dwc:country>
+  <dwc:countryCode>CH</dwc:countryCode>
+  <dwc:stateProvince>SO</dwc:stateProvince>
+  <dwc:municipality>OBERBUCHSITEN</dwc:municipality>
+  <dwc:decimalLatitude>47.332788209119</dwc:decimalLatitude>
+  <dwc:decimalLongitude>7.8024639786892</dwc:decimalLongitude>
+  <dwc:geodeticDatum>WGS84</dwc:geodeticDatum>
+</rdf:Description>
 </rdf:RDF>
 ```
-
+* __type__ : type de données, selon Dublin Core, ici généralement un specimen
+*
 * __taxonID__ : identifiants de taxon info fauna (NUESP dans nos bases de données). Ce numéro est unique dans nos systèmes. Il ne l’est pas globalement.
 * __family__ : famille taxonomique.
 * __genus__ : genre taxonomique.
 * __specificEpithet__ : espèce taxonomique.
 * __taxonRank__ : rang du taxon (famille, genre, espèce, etc.)
 * __vernacularName__ : noms vernaculaires. A notre connaissance, le format ne permet pas de spécifier la langue.
+* __taxonID__ : lien vers l'identification de taxon décrite plus haut.
+* __countraCode__ : code pays (ici généralement CH).
+* __decimalLatitude__ : coordonnées Y du centre du carré 5x5km.
+* __decimalLongitude__ : coordonnées X du centre du carré 5x5km.
+* __geodeticDatum__ : Code [EPSG](http://spatialreference.org/ref/epsg/) des coordonnées (projection utlisée), le 21781 correspond à la projection suisse CH1903 / LV03.
 
 Une requête SPARQL sur la base de ces données peut par exemple prendre la forme suivante :
 
@@ -56,28 +75,3 @@ WHERE
 ```
 
 Le résultat de la requête peut être [consulté ici](https://lepus.unine.ch/api/sparql.php?query=PREFIX+dwc%3A+%3Chttp%3A%2F%2Frs.tdwg.org%2Fdwc%2Fterms%2F%3E%0D%0ASELECT+%3Fnuesp+%3Ffamily+%3Fgenus+%3Fspecies%0D%0AWHERE%0D%0A++%7B+%3Fx+dwc%3AtaxonID+%3Fnuesp+.%0D%0A++++%3Fx+dwc%3Afamily+%3Ffamily+.%0D%0A++++%3Fx+dwc%3Agenus+%3Fgenus+.%0D%0A++++%3Fx+dwc%3AspecificEpithet+%3Fspecies+%7D&output=htmltab&jsonp=&key=&show_inline=1). 
-
-### Distribution selon la grille 5x5 km
-La distrbution des espèces est données selon une grille de 5x5 km. La description de chaque localité est conforme aux standards de Darwin Core (https://dwc.tdwg.org/terms/#location). Pour le crapaud accoucheur, les données, pour le centre de la Ville de Berne sont disponibles à l'adresse: https://lepus.unine.ch/api/distribution/70110/grid/600200.
-
-
-```rdf
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dwc="http://rs.tdwg.org/dwc/terms/">
-  <dwc:Taxon rdf:about="https://lepus.unine.ch/api/species/70110">
-    <dwc:taxonID>70110</dwc:taxonID>
-  </dwc:Taxon>
-  <dc:Location rdf:about="https://lepus.unine.ch/api/distribution/70110/grid/600200">
-    <dwc:countryCode>CH</dwc:countryCode>
-    <dwc:decimalLatitude>202500</dwc:decimalLatitude>
-    <dwc:decimalLongitude>602500</dwc:decimalLongitude>
-    <dwc:geodeticDatum>EPSG:21781</dwc:geodeticDatum>
-  </dc:Location>
-</rdf:RDF>
-```
-
-* __taxonID__ : lien vers l'identification de taxon décrite plus haut.
-* __countraCode__ : code pays (ici généralement CH).
-* __decimalLatitude__ : coordonnées Y du centre du carré 5x5km.
-* __decimalLongitude__ : coordonnées X du centre du carré 5x5km.
-* __geodeticDatum__ : Code [EPSG](http://spatialreference.org/ref/epsg/) des coordonnées (projection utlisée), le 21781 correspond à la projection suisse CH1903 / LV03.
