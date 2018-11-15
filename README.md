@@ -20,7 +20,9 @@ Les specimens sont décrites conformément aux éléments de [Dublin Core](http:
 
 ```rdf
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dc="http://purl.org/dc/terms/">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:dwc="http://rs.tdwg.org/dwc/terms/" 
+         xmlns:dc="http://purl.org/dc/terms/">
 <rdf:Description rdf:about="https://lepus.unine.ch/api/specimen/114">
   <dc:creator>info fauna, Neuchâtel, Switzerland</dc:creator>
   <dc:created>2018-10-29T15:22:37+01:00</dc:created>
